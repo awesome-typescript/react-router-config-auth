@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/named
 import { RouteConfig as ReactRouteConfig } from 'react-router-config'
 
 export type Permission = number | string

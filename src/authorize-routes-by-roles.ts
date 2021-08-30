@@ -19,7 +19,10 @@ export const authorizeRoutesByRoles = (
     )
     .map(({ routes, ...route }) => {
       if (routes) {
-        route.routes = authorizeRoutesByRoles(routes, permissions)
+        return {
+          ...route,
+          routes: authorizeRoutesByRoles(routes, permissions),
+        }
       }
       return route
     })
