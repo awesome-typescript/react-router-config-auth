@@ -68,7 +68,7 @@
 	"eslintConfig": {
 		"extends": "./.eslintrc.json"
 	},
-	"dependencies": {
-		"react-router-config": "5.1.1"
+	"peerDependencies": {
+		"react-router-config": ">=5"
 	}
 }
