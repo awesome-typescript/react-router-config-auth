@@ -21,6 +21,8 @@ npm install @awesome-typescript/react-router-config-auth@1.0.0 --save --save-exa
 ```
 
 ```tsx
+export type RouteConfig = RouteBreadcrumbConfig & ReactRouteConfig
+
 export const routes: RouteConfig[] = [
   {
     path: '/login',
