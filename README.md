@@ -13,7 +13,7 @@ npm install @awesome-typescript/react-router-config-auth@1.0.0 --save --save-exa
 
 ```ts
 {renderRoutes(
-  authorizeRoutesByRoles(
+  authRoutes(
     routes,
     permissions.map((permission) => permission.id),
   ),
@@ -21,6 +21,8 @@ npm install @awesome-typescript/react-router-config-auth@1.0.0 --save --save-exa
 ```
 
 ```tsx
+import { AuthenticationGuard } from '@awesome-typescript/react-router-config-auth'
+
 export type RouteConfig = RouteBreadcrumbConfig & ReactRouteConfig
 
 export const routes: RouteConfig[] = [
@@ -39,7 +41,7 @@ export const routes: RouteConfig[] = [
           () => import('./routes/posts'),
         ),
         settings: {
-          roles: [CanBrowsePosts],
+          roles: [AuthenticationGuard, CanBrowsePosts],
         },
       },
       {

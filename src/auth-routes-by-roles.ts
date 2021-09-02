@@ -9,7 +9,7 @@ const isEachPermissionExists = (
   )
 }
 
-export const authorizeRoutesByRoles = (
+export const authRoutesByRoles = (
   routesConfig: RouteConfig[],
   permissions: Permission[],
 ): RouteConfig[] => {
@@ -21,7 +21,7 @@ export const authorizeRoutesByRoles = (
       if (routes) {
         return {
           ...route,
-          routes: authorizeRoutesByRoles(routes, permissions),
+          routes: authRoutesByRoles(routes, permissions),
         }
       }
       return route
